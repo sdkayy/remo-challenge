@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from '../icons';
 import Selection from '../Selection';
 import { SelectionObject } from '../../types';
 import { IconButton } from '../misc';

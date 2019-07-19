@@ -1,10 +1,3 @@
-## My basic boiler plate.
+# Remo Challenge
 
-This is just a very simple boiler plate to get me up and running rather fast on new projects.
-
-Inlcudes:
-- React
-- Typescript
-- Redux
-- Apollo
-- Routing
+Sorry if this isn't the full challenge, first time I have done something similar to this and may of missed some instructions.
