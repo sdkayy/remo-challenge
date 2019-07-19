@@ -4,7 +4,13 @@ export interface SelectionObject {
   index: number;
   hidden: boolean;
   highlighted: boolean;
+  // Starting position
   position: {
+    x: number;
+    y: number;
+  };
+  // Position over time
+  deltaPosition: {
     x: number;
     y: number;
   };

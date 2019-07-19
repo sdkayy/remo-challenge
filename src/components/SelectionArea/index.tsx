@@ -41,6 +41,7 @@ interface Props {
   objects: SelectionObject[];
   newObject: any;
   highlightObject: any;
+  updatePosition: any;
 }
 
 interface State {
@@ -130,6 +131,7 @@ export default class SelectionArea extends React.Component<Props, State> {
                 width={obj.width}
                 height={obj.height}
                 position={obj.position}
+                updatePosition={(e, ui) => this.props.updatePosition(e, ui, index)}
               />
             ))}
         </Body>

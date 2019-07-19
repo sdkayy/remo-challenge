@@ -47,6 +47,18 @@ export default class Home extends React.Component<any, State> {
     }
   };
 
+  public updatePosition = (e: any, ui: any, index: number) => {
+    const { objects } = this.state;
+    objects[index] = {
+      ...objects[index],
+      deltaPosition: {
+        x: objects[index].position.x + ui.deltaX,
+        y: objects[index].position.y + ui.deltaY,
+      },
+    };
+    this.setState({ objects });
+  };
+
   public highlightObject = (index: number) => {
     const { objects } = this.state;
     objects[index] = {
@@ -64,6 +76,7 @@ export default class Home extends React.Component<any, State> {
         <SelectionArea
           highlightObject={this.highlightObject}
           objects={this.state.objects}
+          updatePosition={this.updatePosition}
           newObject={(obj: SelectionObject) =>
             this.setState({
               objects: [...this.state.objects, obj],

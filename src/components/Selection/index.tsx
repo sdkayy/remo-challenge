@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Draggable from 'react-draggable';
 
 const PrettyTitle = styled.p`
   padding: 4px;
@@ -16,25 +17,28 @@ interface Props {
   position: any;
   index: number;
   onSelect: any;
+  updatePosition: any;
 }
 
 export default (props: Props) => (
-  <div
-    onClick={props.onSelect}
-    style={{
-      position: 'absolute',
-      top: `${props.position.y - 22}px`,
-      left: `${props.position.x}px`,
-    }}
-  >
-    <PrettyTitle>Object{props.index}</PrettyTitle>
+  <Draggable bounds={'parent'} onDrag={props.updatePosition}>
     <div
+      onClick={props.onSelect}
       style={{
-        zIndex: 1,
-        border: '1px solid #40C284',
-        width: `${props.width}px`,
-        height: `${props.height}px`,
+        position: 'absolute',
+        top: `${props.position.y - 22}px`,
+        left: `${props.position.x}px`,
       }}
-    />
-  </div>
+    >
+      <PrettyTitle>Object{props.index}</PrettyTitle>
+      <div
+        style={{
+          zIndex: 1,
+          border: '1px solid #40C284',
+          width: `${props.width}px`,
+          height: `${props.height}px`,
+        }}
+      />
+    </div>
+  </Draggable>
 );
